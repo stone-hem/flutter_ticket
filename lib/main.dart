@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ticket/screens/bottom.dart';
+import 'package:flutter_ticket/utils/app_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ticket app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: primary,
       ),
       home:  const BottomBar(),
     );

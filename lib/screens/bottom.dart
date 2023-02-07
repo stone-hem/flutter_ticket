@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_ticket/screens/home.dart';
 import 'package:flutter_ticket/screens/profile.dart';
 import 'package:flutter_ticket/screens/search.dart';
@@ -14,7 +12,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int _isActive = 0;
+  int _isActive = 0; //default selected index at start
 
   static final List<Widget> _widgets = <Widget>[
     const Home(),
@@ -34,9 +32,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My tickets"),
-      ),
+
       body: Center(child: _widgets[_isActive]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _isActive,//index that is being set
