@@ -99,7 +99,17 @@ class Home extends StatelessWidget {
                  SizedBox(
                   height: height * 0.05,
                 ),
-                TicketView()
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TicketView(),
+                      SizedBox(width: 10,),
+                      TicketView()
+                    ],
+                  ),
+                ),
+                Text("data")
               ],
             ),
           )
