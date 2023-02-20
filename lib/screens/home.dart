@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ticket/screens/hotel_images.dart';
 import 'package:flutter_ticket/screens/ticket_view.dart';
 import 'package:flutter_ticket/utils/app_styles.dart';
 
@@ -99,20 +100,58 @@ class Home extends StatelessWidget {
                  SizedBox(
                   height: height * 0.05,
                 ),
-                SingleChildScrollView(
+                
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 20),
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
+                    children: const [
                       TicketView(),
                       SizedBox(width: 10,),
                       TicketView()
                     ],
                   ),
                 ),
-                Text("data")
-              ],
-            ),
-          )
+                Container(
+                  padding:const EdgeInsetsDirectional.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Hotels",
+                        style: Styles.headStyle2,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print("view all");
+                        },
+                        child: Text(
+                          "view all",
+                          style: Styles.textStyle
+                              .copyWith(color: Styles.primaryColor),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                 SizedBox(
+                  height: height * 0.03,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    children: [
+                      HotelImages(),
+                      HotelImages(),
+                      HotelImages(),
+                    ],
+                  ),
+                  ),
+        
         ],
       ),
     );
